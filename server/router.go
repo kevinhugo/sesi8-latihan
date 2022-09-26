@@ -22,6 +22,9 @@ func (r *Router) Start(port string) {
 	// docs.SwaggerInfo.BasePath = "/api/v1"
 
 	router.GET("/people", r.people.GetPeople)
+	router.POST("/people", r.people.AddPerson)
+	router.PUT("/people", r.people.UpdatePerson)
+	router.DELETE("/people", r.people.DeletePerson)
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 	router.Run(port)
 }

@@ -33,6 +33,19 @@ info:
   version: v1.0
 paths:
   /people:
+    delete:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/views.GetAllPeopleSwagger'
+      summary: Delete a person by id
+      tags:
+      - person
     get:
       consumes:
       - application/json
@@ -44,6 +57,32 @@ paths:
           schema:
             $ref: '#/definitions/views.GetAllPeopleSwagger'
       summary: Get all people
+      tags:
+      - person
+    post:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/views.GetAllPeopleSwagger'
+      summary: Add a person
+      tags:
+      - person
+    put:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/views.GetAllPeopleSwagger'
+      summary: Update person
       tags:
       - person
 swagger: "2.0"
